@@ -1,0 +1,1 @@
+# smity-shared
