@@ -2,17 +2,26 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "declaration": true,
+    "declarationDir": "dist/types",
     "esModuleInterop": true,
-    "lib": ["es5", "es2015", "es2016", "esnext"],
+    "lib": ["es5", "es2015", "es2016", "esnext", "dom"],
     "types": ["node"],
-    "module": "es2015",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noUnusedLocals": true,
-    "outDir": "dist/esm",
     "sourceMap": true,
-    "strict": true,
-    "target": "es6"
+    "strict": true
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
+
+/*
+"module": "ESNext",
+"target": "ESNext",
+"outDir": "dist/esm",
+
+"module": "CommonJS",
+"target": "ES2015",
+"outDir": "dist/cjs",
+*/
