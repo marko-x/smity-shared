@@ -30,7 +30,9 @@ export const post = {
       codeTrackerResults: z.array(
         z.object({
           campaignId: z.string(),
+          codeTrackingId: z.string(),
           communityName: z.string(),
+          communityId: z.string(),
           state: z.enum(["completed", "uncompleted"]),
           generatedCouponId: z.string().nullable(),
           generatedPoints: z.number().nullable(),
@@ -39,6 +41,10 @@ export const post = {
       cooldowns: z.array(
         z.object({
           campaignId: z.string(),
+          codeTrackingId: z.string(),
+          communityName: z.string(),
+          communityId: z.string(),
+          multipleParticipation: z.boolean(),
           cooldownUntil: zNullableDate(false),
           codeTrackerId: z.string(),
         })
