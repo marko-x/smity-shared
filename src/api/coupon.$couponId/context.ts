@@ -24,21 +24,23 @@ export const get = {
     durabilityDate: zNullableDate(),
     locationDischargers: z.array(
       z.object({
-        locationId: z.string(),
         dischargerId: z.string(),
-        name: z.string(),
         instructionDescription: z.string().nullable(),
         dischargeFrom: zNullableDate(),
         dischargeUntil: zNullableDate(),
-        address: z
-          .object({
-            countryName: z.string(),
-            postalCode: z.string(),
-            municipalityName: z.string(),
-            streetName: z.string(),
-            streetNameUnit: z.string(),
-          })
-          .nullable(),
+        location: z.object({
+          id: z.string(),
+          name: z.string(),
+          address: z
+            .object({
+              countryName: z.string(),
+              postalCode: z.string(),
+              municipalityName: z.string(),
+              streetName: z.string(),
+              streetNameUnit: z.string(),
+            })
+            .nullable(),
+        }),
       })
     ),
     onlinesystemDischargers: z.array(
